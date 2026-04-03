@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>動物病院 診療単価セルフチェック｜無料診断</title>
+  <meta name="description" content="たった3つの数字を入れるだけ。30秒で分かる「診療単価セルフチェック」。体制そのままで年間売上アップの可能性を今すぐ確認。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #1a1a2e;
+      background: #f8fafb;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; }
+
+    :root {
+      --navy: #0f1b3d;
+      --navy-light: #1a2d5a;
+      --green: #059669;
+      --green-light: #10b981;
+      --green-glow: rgba(5, 150, 105, 0.15);
+      --gold: #d4a853;
+      --bg-white: #ffffff;
+      --bg-light: #f0f7f4;
+      --bg-section: #f8fafb;
+      --text-primary: #1a1a2e;
+      --text-secondary: #4a5568;
+      --text-muted: #718096;
+      --border: #e2e8f0;
+      --gradient-navy: linear-gradient(135deg, #0f1b3d 0%, #1a2d5a 100%);
+      --gradient-green: linear-gradient(135deg, #059669 0%, #047857 100%);
+    }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 72px 0; }
+    .text-center { text-align: center; }
+    .serif { font-family: 'Noto Serif JP', serif; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes countUp {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: all 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ====== HERO ====== */
+    .hero {
+      background: var(--gradient-navy);
+      color: white;
+      padding: 80px 0 64px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(5,150,105,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: transparent;
+      color: #6ee7b7;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s ease;
+    }
+    .hero h1 .highlight { color: #6ee7b7; }
+    .hero h1 .gold { color: var(--gold); }
+    .hero-condition {
+      font-size: clamp(0.9rem, 2.2vw, 1rem);
+      color: rgba(255,255,255,0.95);
+      font-weight: 700;
+      line-height: 1.9;
+      margin-bottom: 16px;
+      animation: fadeInUp 0.8s ease 0.1s backwards;
+    }
+    .hero-sub {
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+      animation: fadeInUp 0.8s ease 0.2s backwards;
+    }
+    .hero-proof {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+      animation: fadeInUp 0.8s ease 0.4s backwards;
+    }
+    .proof-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 0.82rem;
+    }
+    .proof-chip .num { color: var(--gold); font-weight: 900; font-size: 1.1rem; }
+    .hero-cta {
+      display: inline-block;
+      background: var(--gradient-green);
+      color: white;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 18px 48px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(5,150,105,0.4);
+      animation: fadeInUp 0.8s ease 0.6s backwards;
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(5,150,105,0.5); }
+    .hero-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 12px;
+    }
+
+    /* ====== EMPATHY ====== */
+    .empathy { background: var(--bg-white); }
+    .empathy h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--navy);
+    }
+    .pain-list { list-style: none; max-width: 580px; margin: 0 auto 32px; }
+    .pain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.97rem;
+    }
+    .pain-list li:last-child { border-bottom: none; }
+    .pain-icon { flex-shrink: 0; color: var(--green); font-weight: 900; margin-top: 2px; }
+    .empathy-bottom {
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-top: 8px;
+    }
+
+    /* ====== CALCULATOR ====== */
+    .calculator-section {
+      background: var(--gradient-navy);
+      padding: 72px 0;
+    }
+    .calc-title {
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+    }
+    .calc-title .badge {
+      display: inline-block;
+      background: var(--gradient-green);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 99px;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+    .calc-title h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+      line-height: 1.5;
+    }
+    .calc-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    .calc-step {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .calc-step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--gradient-green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+    .calc-step label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .calc-input-group { margin-bottom: 24px; }
+    /* コンボ入力（手入力 + 右ドロップダウン）*/
+    .combo-input {
+      position: relative;
+      margin-top: 6px;
+    }
+    .combo-input input {
+      width: 100%;
+      padding: 14px 120px 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #fafafa;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .combo-input input:focus {
+      outline: none;
+      border-color: var(--green);
+      background: white;
+      box-shadow: 0 0 0 3px var(--green-glow);
+    }
+    .combo-input .combo-select {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 115px;
+      border: none;
+      border-left: 1px solid var(--border);
+      border-radius: 0 9px 9px 0;
+      background: #f0f4f3;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      font-family: inherit;
+      cursor: pointer;
+      padding: 0 8px;
+      outline: none;
+    }
+    .combo-input .combo-select:hover { background: #e6f0ec; }
+    /* 通常のselectはそのまま */
+    .calc-input-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #fafafa;
+      transition: border-color 0.3s;
+      margin-top: 6px;
+      outline: none;
+    }
+    .calc-input-group select:focus {
+      border-color: var(--green);
+      background: white;
+      box-shadow: 0 0 0 3px var(--green-glow);
+    }
+    .calc-input-group .hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .calc-btn {
+      width: 100%;
+      padding: 18px;
+      background: var(--gradient-green);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(5,150,105,0.35);
+    }
+    .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(5,150,105,0.5); }
+
+    /* ====== RESULT ====== */
+    #result-section { display: none; }
+    .result-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      animation: countUp 0.6s ease;
+    }
+    .result-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .result-header h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .result-box {
+      background: var(--bg-light);
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .result-box .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .result-box .value {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .result-box .value.positive { color: var(--green); }
+    .result-box .value.negative { color: #e53e3e; }
+    .result-box .value.gold { color: var(--gold); }
+    .result-box .unit { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+    .result-impact {
+      background: linear-gradient(135deg, #0f1b3d, #1a2d5a);
+      border-radius: 14px;
+      padding: 28px;
+      text-align: center;
+      color: white;
+      margin-bottom: 24px;
+    }
+    .result-impact .label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+    .result-impact .big-num {
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .result-impact .sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .result-message {
+      background: #f0fdf4;
+      border: 1px solid #6ee7b7;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      color: #065f46;
+      margin-bottom: 24px;
+    }
+    .result-cta-text {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    /* ====== CASE STUDY ====== */
+    .proof { background: var(--bg-white); }
+    .proof h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--navy);
+    }
+    /* ====== CASE STUDY (Impact Table) ====== */
+    .impact-box {
+      width: 100%;
+      margin-bottom: 32px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .impact-title {
+      background: var(--gradient-green);
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+    .impact-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .impact-table th {
+      background: var(--bg-light);
+      padding: 10px 8px;
+      font-size: 0.82rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--navy);
+      font-weight: 700;
+      text-align: right;
+    }
+    .impact-table th:first-child { text-align: center; }
+    .impact-table td {
+      padding: 12px 8px;
+      border-bottom: 1px solid #eee;
+      text-align: right;
+      font-size: 0.93rem;
+      color: var(--text-primary);
+    }
+    .impact-table td:first-child {
+      text-align: center;
+      font-weight: 700;
+      background: var(--bg-section);
+      color: var(--navy);
+    }
+    .impact-result-row td {
+      background: rgba(212,168,83,0.08);
+      border-bottom: 1px solid rgba(212,168,83,0.2);
+    }
+    .impact-result-last td {
+      background: rgba(15,27,61,0.04);
+      border-bottom: none;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+    .impact-big-num {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--green);
+      display: block;
+    }
+    .impact-plus { color: var(--green); font-weight: 700; }
+
+    /* ====== FORM SECTION ====== */
+    .form-section { background: var(--bg-section); }
+    .form-section h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+    .form-lead {
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+      font-size: 0.93rem;
+    }
+    /* 2カラムレイアウト */
+    .form-layout {
+      display: flex;
+      gap: 48px;
+      align-items: center; /* フォームと画像を中心に揃える */
+      justify-content: center;
+    }
+    .form-image-col {
+      flex-shrink: 0;
+      width: 300px; /* 画像サイズを微調整 */
+    }
+    .report-cover-img {
+      width: 100%;
+      display: block;
+      mix-blend-mode: multiply; /* 白背景を透過 */
+    }
+    .form-content-col { flex: 1; }
+    .myasp-wrapper {
+      max-width: 100%;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    /* MyASPフォーム用スタイルのオーバーライド */
+    .myasp-wrapper input[type="text"],
+    .myasp-wrapper input[type="email"] {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 13px 16px !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 8px !important;
+      font-size: 1rem !important;
+      font-family: inherit !important;
+      margin-bottom: 12px;
+    }
+    .placeholder-form .form-group { margin-bottom: 16px; }
+    .placeholder-form label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+    .placeholder-form input {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #fafafa;
+    }
+    .placeholder-form input:focus,
+    .myasp-wrapper input[type="text"]:focus,
+    .myasp-wrapper input[type="email"]:focus {
+      outline: none;
+      border-color: var(--green) !important;
+      box-shadow: 0 0 0 3px var(--green-glow) !important;
+    }
+    .form-submit-btn,
+    .myasp-wrapper .form_input_submit input {
+      width: 100% !important;
+      box-sizing: border-box !important; /* 横幅を完全に揃える */
+      padding: 17px !important;
+      background: var(--gradient-green) !important;
+      color: white !important;
+      border: none !important;
+      border-radius: 8px !important;
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      font-family: inherit !important;
+      cursor: pointer !important;
+      margin-top: 0 !important; /* 余白を詰める */
+      box-shadow: 0 4px 16px rgba(5,150,105,0.35) !important;
+      transition: all 0.3s !important;
+    }
+    .myasp-wrapper .content_title { display: none !important; }
+    
+    /* MyASP レイアウト崩れ修正 */
+    .myasp-wrapper .input_unit {
+      margin-bottom: 12px !important; /* 24pxから縮小 */
+      display: block !important;
+    }
+    .myasp-wrapper .my_column {
+      width: 100% !important;
+      display: block !important;
+      float: none !important;
+      padding: 0 !important;
+    }
+    .myasp-wrapper .form_input_label {
+      display: block !important;
+      font-size: 0.9rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 8px !important;
+      color: var(--navy) !important;
+    }
+    .myasp-wrapper input.required_color {
+      background-color: #fafafa !important; /* 薄赤背景を強制リセット */
+    }
+    .myasp-wrapper input[type="text"],
+    .myasp-wrapper input[type="email"] {
+      background-color: #fafafa !important;
+      border: 1px solid var(--border) !important;
+    }
+    .myasp-wrapper .submit { margin-top: 4px !important; /* 余白を詰める */ }
+    .myasp-wrapper .required { color: inherit; } /* MyASPの赤文字リセット用 */
+    .form-submit-btn:hover { transform: translateY(-2px); }
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+
+    /* ====== FOOTER ====== */
+    .lp-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.45);
+      padding: 36px 0;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+    .lp-footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
+
+    /* ====== PROFILE ====== */
+    .profile-section {
+      background: #0f0f0f;
+      padding: 80px 0;
+      color: white;
+    }
+    .profile-section h2 {
+      color: white;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .profile-inner {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+    .profile-img-wrap { flex-shrink: 0; }
+    .profile-img {
+      width: 300px;
+      border-radius: 12px;
+      display: block;
+      object-fit: cover;
+    }
+    .profile-clinic {
+      font-size: 0.82rem;
+      color: #6ee7b7;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .profile-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .profile-tagline {
+      font-size: 0.93rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .profile-bio p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.95);
+      line-height: 2;
+      margin-bottom: 14px;
+    }
+    .profile-bio p:last-child { margin-bottom: 0; }
+    .profile-quote {
+      color: #6ee7b7 !important;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 600px) {
+      .section, .calculator-section, .proof, .form-section { padding: 52px 0; }
+      .calc-card, .result-card { padding: 24px 20px; }
+      .result-grid { grid-template-columns: 1fr; }
+      .case-stats { grid-template-columns: 1fr; }
+      .hero-proof { gap: 12px; }
+      .myasp-wrapper { padding: 28px 20px; }
+      /* フォームレイアウト：縦並び */
+      .form-layout { flex-direction: column; gap: 32px; align-items: center; }
+      .form-image-col { width: 100%; max-width: 280px; }
+      .form-content-col { width: 100%; }
+      /* プロフィール：縦並び */
+      .profile-inner { flex-direction: column; gap: 28px; }
+      .profile-img { width: 100%; max-width: 320px; margin: 0 auto; }
+      .profile-section { padding: 52px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-badge">一人型動物病院の院長へ</div>
+      <p class="hero-condition">
+        もし「朝から晩まで診ているのに利益が増えない」<br>
+        「来院数もスタッフも、これ以上増やせない」なら——
+      </p>
+      <h1>
+        <span class="highlight">体制そのまま</span>で<br>
+        年間<span class="highlight">600万円</span>の<br>
+        売上アップができるかもしれません
+      </h1>
+      <p class="hero-sub">
+        たった3つの数字を入れるだけ。<br>
+        30秒で分かる「診療単価セルフチェック」を無料でお試しください。
+      </p>
+      <div class="hero-proof">
+        <div class="proof-chip">
+          <span class="num">+678万円</span><br>A動物病院（個人院）年間売上増加
+        </div>
+        <div class="proof-chip">
+          <span class="num">+1,535万円</span><br>B動物病院（法人院）年間売上増加
+        </div>
+      </div>
+      <a href="#calculator" class="hero-cta">今すぐ無料でチェックする（30秒）→</a>
+      <p class="hero-note">※ スタッフ増員・診療時間延長・値上げは一切不要です</p>
+    </div>
+  </section>
+
+  <!-- ====== EMPATHY ====== -->
+  <section class="empathy section">
+    <div class="container">
+      <h2 class="fade-in">こんなことを<br>感じていませんか？</h2>
+      <ul class="pain-list fade-in">
+        <li><span class="pain-icon">▸</span><span>毎日忙しく診ているのに、手元にお金が残らない</span></li>
+        <li><span class="pain-icon">▸</span><span>単価を上げたいが、患者が離れそうで怖い</span></li>
+        <li><span class="pain-icon">▸</span><span>来院数は多いのに、なぜか利益率が低い</span></li>
+        <li><span class="pain-icon">▸</span><span>自分の単価が適正なのか、客観的に判断できない</span></li>
+        <li><span class="pain-icon">▸</span><span>スタッフを増やさずに売上を上げる方法が分からない</span></li>
+      </ul>
+      <p class="empathy-bottom fade-in">その悩み、診療単価の設計で解決できるかもしれません。</p>
+    </div>
+  </section>
+
+  <!-- ====== CALCULATOR ====== -->
+  <section class="calculator-section" id="calculator">
+    <div class="container">
+      <div class="calc-title fade-in">
+        <div class="badge">⚡ 30秒セルフチェック</div>
+        <h2>3つの数字を入力してください</h2>
+      </div>
+
+      <div class="calc-card fade-in">
+        <div class="calc-input-group">
+          <div class="calc-step">
+            <div class="calc-step-num">1</div>
+            <label for="monthly-visits">月間来院数（頭数）</label>
+          </div>
+          <div class="combo-input">
+            <input type="number" id="monthly-visits" placeholder="例: 300" min="1">
+            <select class="combo-select" onchange="fillInput('monthly-visits', this)">
+              <option value="" disabled selected>▼ 大まかに選ぶ</option>
+              <option value="80">〜100頭</option>
+              <option value="150">100〜200頭</option>
+              <option value="250">200〜300頭</option>
+              <option value="400">300〜500頭</option>
+              <option value="650">500〜800頭</option>
+              <option value="1000">800頭以上</option>
+            </select>
+          </div>
+          <p class="hint">1ヶ月に何頭の患者さんを診ていますか？</p>
+        </div>
+
+        <div class="calc-input-group">
+          <div class="calc-step">
+            <div class="calc-step-num">2</div>
+            <label for="monthly-sales">月間売上（円）</label>
+          </div>
+          <div class="combo-input">
+            <input type="number" id="monthly-sales" placeholder="例: 2500000" min="1">
+            <select class="combo-select" onchange="fillInput('monthly-sales', this)">
+              <option value="" disabled selected>▼ 大まかに選ぶ</option>
+              <option value="1000000">〜100万円</option>
+              <option value="1500000">100〜200万円</option>
+              <option value="2500000">200〜300万円</option>
+              <option value="4000000">300〜500万円</option>
+              <option value="6500000">500〜800万円</option>
+              <option value="9000000">800〜1,000万円</option>
+              <option value="12000000">1,000万円以上</option>
+            </select>
+          </div>
+          <p class="hint">先月の売上（税込み可）を入力してください</p>
+        </div>
+
+        <div class="calc-input-group">
+          <div class="calc-step">
+            <div class="calc-step-num">3</div>
+            <label for="main-treatment">主な診療内容</label>
+          </div>
+          <select id="main-treatment">
+            <option value="">選択してください</option>
+            <option value="general">一般診療（内科中心）</option>
+            <option value="surgery">外科・手術中心</option>
+            <option value="preventive">予防医療中心（ワクチン・健診）</option>
+            <option value="dental">デンタルケア中心</option>
+            <option value="mixed">総合（上記の混合）</option>
+          </select>
+          <p class="hint">最も来院理由として多いものを選んでください</p>
+        </div>
+
+        <button class="calc-btn" onclick="calculate()">
+          診断結果を見る →
+        </button>
+      </div>
+
+      <!-- RESULT -->
+      <div id="result-section">
+        <div class="result-card">
+          <div class="result-header">
+            <h3>📊 あなたの病院の診断結果</h3>
+          </div>
+
+          <div class="result-grid">
+            <div class="result-box">
+              <div class="label">現在の平均<br>診療単価</div>
+              <div class="value" id="result-tanka">—</div>
+              <div class="unit">円 / 頭</div>
+            </div>
+            <div class="result-box">
+              <div class="label">業界平均との<br>比較</div>
+              <div class="value" id="result-diff">—</div>
+              <div class="unit" id="result-diff-label">円</div>
+            </div>
+            <div class="result-box">
+              <div class="label">改善余地<br>スコア</div>
+              <div class="value gold" id="result-score">—</div>
+              <div class="unit">/ 100点</div>
+            </div>
+          </div>
+
+          <div class="result-impact">
+            <div class="label">大野式単価アップメソッド適用の場合の推定効果</div>
+            <div class="big-num" id="result-annual">—</div>
+            <div class="sub" id="result-annual-label">年間売上増加の見込み額（試算）</div>
+          </div>
+
+          <div class="result-message" id="result-message">
+            結果を計算中...
+          </div>
+
+          <p class="result-cta-text">無料で大野式単価アップメソッドのレポートを受け取り、単価アップしませんか？</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CASE STUDY ====== -->
+  <section class="proof section" id="proof">
+    <div class="container">
+      <p class="fade-in" style="text-align:center; font-size:1.2rem; font-weight:700; color:var(--green); margin-bottom:8px;">大野式単価アップメソッド</p>
+      <h2 class="fade-in">実際の成果</h2>
+      <p class="fade-in" style="text-align:center; color:var(--text-secondary); margin-bottom:40px; font-size:0.93rem;">
+        スタッフ増員・診療時間延長・値上げなし。<br>単価の設計を変えただけで達成した実績です。
+      </p>
+
+      <!-- A病院 -->
+      <div class="impact-box fade-in">
+        <div class="impact-title">実際の改善事例（A動物病院様）</div>
+        <table class="impact-table">
+          <thead>
+            <tr>
+              <th>年度</th>
+              <th>売上（円）</th>
+              <th>単価（円）</th>
+              <th>来院数（件）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024年</td>
+              <td>29,130,936</td>
+              <td>10,275</td>
+              <td>2,835</td>
+            </tr>
+            <tr>
+              <td>2025年</td>
+              <td>35,916,328</td>
+              <td>10,980</td>
+              <td>3,271</td>
+            </tr>
+            <tr class="impact-result-row">
+              <td>増減額</td>
+              <td><span class="impact-plus">+6,785,392</span></td>
+              <td><span class="impact-plus">+705</span></td>
+              <td><span class="impact-plus">+436</span></td>
+            </tr>
+            <tr class="impact-result-last">
+              <td>昨対比</td>
+              <td><span class="impact-big-num">123%</span></td>
+              <td><span class="impact-big-num">107%</span></td>
+              <td><span class="impact-big-num">115%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- B病院 -->
+      <div class="impact-box fade-in">
+        <div class="impact-title">実際の改善事例（B動物病院様）</div>
+        <table class="impact-table">
+          <thead>
+            <tr>
+              <th>年度</th>
+              <th>売上（円）</th>
+              <th>単価（円）</th>
+              <th>来院数（件）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024年</td>
+              <td>158,604,021</td>
+              <td>5,286</td>
+              <td>30,002</td>
+            </tr>
+            <tr>
+              <td>2025年</td>
+              <td>173,959,026</td>
+              <td>5,465</td>
+              <td>31,830</td>
+            </tr>
+            <tr class="impact-result-row">
+              <td>増減額</td>
+              <td><span class="impact-plus">+15,355,005</span></td>
+              <td><span class="impact-plus">+179</span></td>
+              <td><span class="impact-plus">+1,828</span></td>
+            </tr>
+            <tr class="impact-result-last">
+              <td>昨対比</td>
+              <td><span class="impact-big-num">110%</span></td>
+              <td><span class="impact-big-num">103%</span></td>
+              <td><span class="impact-big-num">106%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:right; font-size:0.75rem; color:var(--text-muted); margin-top:8px;">※個人の実例であり、成果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <!-- ====== BRIDGE ====== -->
+  <section style="background: var(--gradient-navy); padding: 72px 0; text-align: center;">
+    <div class="container">
+      <p style="font-family:'Noto Serif JP',serif; font-size:clamp(1.5rem,4.5vw,2.2rem); font-weight:700; color:white; line-height:1.7; margin-bottom:24px;">
+        ウチはどうすればいい？<br>
+        何からはじめたらいい？
+      </p>
+      <p style="font-size:1rem; color:rgba(255,255,255,0.8); font-weight:500;">
+        そう感じた方のためにこちらを用意しました。
+      </p>
+      <div style="width:48px; height:3px; background:var(--gold); margin:28px auto 16px; border-radius:2px;"></div>
+      <div style="color:var(--gold); font-size:2rem; line-height:1; animation: fadeInUp 0.8s ease 0.3s backwards;">↓</div>
+    </div>
+  </section>
+
+  <!-- ====== FORM SECTION ====== -->
+  <section class="form-section section" id="form">
+    <div class="container">
+      <h2 class="fade-in">無料レポート<br>『診療単価を改善する技術』<br>今すぐ受け取ってください。</h2>
+      <p class="form-lead fade-in">診断結果をもとに、具体的な単価設計のアドバイスをお届けします。</p>
+
+      <div class="form-layout fade-in">
+        <!-- レポート表紙画像 -->
+        <div class="form-image-col">
+          <img src="ohno-report.png" alt="無料レポート：診療単価を改善する技術" class="report-cover-img">
+        </div>
+
+        <!-- フォーム -->
+        <div class="form-content-col">
+          <div class="myasp-wrapper">
+            <!-- MyASP Form -->
+<link rel="stylesheet" type="text/css" href="https://v1et.com/p/format_css?item_id=QssE617r&format=div&form_align=&label_align=&radio_float=&checkbox_float=&label_width=0&input_width=0&theme_name=3_7&ver=3" />
+<link rel="stylesheet" type="text/css" href="https://v1et.com/p/mobile_css?item_id=QssE617r&format=div&form_align=&label_align=&radio_float=&checkbox_float=&label_width=0&input_width=0&theme_name=3_7&ver=3" />
+<link rel="stylesheet" type="text/css" href="https://v1et.com/css/form/myasp-ui-form.css?d=20230707093530">
+
+<div class="content_title">
+    <h2>無料メルマガ登録【仕組み作り】</h2>
+</div>
+
+<div class="content_form">
+    <form action="https://v1et.com/p/r/QssE617r" enctype="multipart/form-data" id="UserItemForm" class="myForm" method="post" accept-charset="utf-8">
+        <input type="hidden" name="_method" value="POST"/>
+        
+        <!-- メールアドレス -->
+        <div class="input text input_unit  required">
+            <div class="my_column my_left">
+                <div class="label_frame">
+                    <label for="Usermail" class="form_input_label  required">メールアドレス</label>
+                </div>
+            </div>
+            <div class="my_column my_right">
+                <input name="data[User][mail]" id="Usermail" value="" class=" required" type="text" placeholder="example@clinic.com"/>
+            </div>
+        </div>
+
+        <!-- 確認ボタン -->
+        <div class="submit form_input_submit">
+            <input type="submit" value="無料でレポートを受け取る →"/>
+        </div>
+        
+        <input type="hidden" id="server_url" value="https://v1et.com/"/>
+        
+    <!-- ▼リファラ -->
+    <input type="hidden" name="data[User][referer_form_url]" value="" class="UserRefererFormUrl"/>
+    <input type="hidden" name="data[User][referer_url]" value="" class="UserRefererUrl"/>
+
+    <script type="text/javascript">
+//<!--
+    if (document.referrer.length !=0 ){
+        if (document.getElementsByClassName("UserRefererUrl"))
+        {
+        var user_referer_url = document.getElementsByClassName("UserRefererUrl");
+        for (var i = 0; i < user_referer_url.length; i++)
+        {
+            user_referer_url[i].value = document.referrer;
+        }
+        }
+        else if (document.getElementById("UserRefererUrl"))
+        {
+            document.getElementById("UserRefererUrl").value = document.referrer;
+        }
+    }
+
+
+    if (document.getElementsByClassName("UserRefererFormUrl"))
+    {
+        var user_referer_form_url = document.getElementsByClassName("UserRefererFormUrl");
+        for (var i = 0; i < user_referer_form_url.length; i++)
+        {
+            user_referer_form_url[i].value = location.href;
+        }
+    }
+    else if (document.getElementById("UserRefererFormUrl"))
+    {
+        document.getElementById("UserRefererFormUrl").value = location.href;
+    }
+//-->
+    </script>
+    <!-- ▲リファラ -->
+</form>
+</div>
+<script src="https://v1et.com/js/validation.js?d=20231130144907"></script>
+            <!-- /MyASP Form -->
+            <p class="form-note">
+              ※個人の実例であり、成果を保証するものではありません。<br>
+              ※icloud、SoftBank、docomo、auのアドレスはメールが届かない恐れがございます。Gmailなどのフリーメールでご登録ください。<br>
+              ※登録して頂いた情報はプライバシーポリシーに基づき厳重に管理いたしますのでご安心ください。<br>
+              ※いつでもメルマガ購読解除ができるため、リスクはありません。<br>
+              ※営業の押し売りは一切行いません。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROFILE ====== -->
+  <section class="profile-section">
+    <div class="container">
+      <h2 class="fade-in">著者プロフィール</h2>
+      <div class="profile-inner">
+        <div class="profile-img-wrap">
+          <img src="ohno-profile.jpg" alt="大野裕司院長" class="profile-img">
+        </div>
+        <div class="profile-text">
+          <p class="profile-clinic">平和動物病院院長</p>
+          <h3 class="profile-name">大野裕司（おおの ひろし）</h3>
+          <p class="profile-tagline">体制そのままで年商500万円アップを実現する<br>1人型動物病院の経営参謀</p>
+          <div class="profile-bio">
+            <p>開業当初は患者が来ず、パチンコ屋で時間を潰しては妻からの電話で病院へ戻る日々を過ごす。</p>
+            <p>軌道に乗ってからも、早朝から深夜までの長時間労働で、子供の寝顔しか見られない生活が続く。「家のことを何もしない」という妻の小言と、家庭崩壊の危機。</p>
+            <p>「頑張っていれば報われる」 そう信じていたが、リーマンショック、そして東日本大震災という二度の危機がその幻想を打ち砕く。売上がガクンと落ち、経営は限界に。</p>
+            <p>「このままでは家族も病院も守れない」という恐怖から、経営を学び直す。</p>
+            <p>そのなかで、多くの獣医師が避ける「単価アップ」に着目。「値上げ＝悪」という思い込みを捨て、マーケティングを駆使して「価値」を伝えることに注力した結果、月商は3倍、5倍と急伸し、ついには月商1,000万円の壁を突破。</p>
+            <p class="profile-quote">「適正単価の診療は悪ではなく、最高の価値提供である」</p>
+            <p>経済的余裕が診療の質を高め、飼い主からの感謝が増えることを実証。現在は、自身のV字回復経験をもとに、一人型動物病院の経営参謀として活動。</p>
+            <p>かつての自分と同じように悩む院長に対し、「飼い主に喜ばれる単価アップ」を通じて、獣医師としてのやりがいと家族との幸せな時間を取り戻すサポートに尽力している。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PAID SERVICE NOTICE ====== -->
+  <section class="section" style="background: var(--bg-white);">
+    <div class="container">
+      <div style="max-width:600px; margin:0 auto; border:1px solid var(--border); border-radius:16px; padding:36px 32px; box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+        <h2 class="fade-in" style="text-align:center; margin-bottom:16px;">有料サービスのお知らせ</h2>
+        <p style="font-size:0.93rem; color:var(--text-secondary); line-height:1.9; margin-bottom:24px;">
+          本PDFダウンロードURLと一緒にお送りするメルマガの中では以下の有料ワークショップをご紹介しています。
+        </p>
+        <div style="background:var(--bg-light); border-radius:12px; padding:24px;">
+          <p style="font-family:'Noto Serif JP',serif; font-size:1.05rem; font-weight:700; color:var(--navy); margin-bottom:8px;">
+            『売上アップの個別ワークショップ』
+          </p>
+          <p style="font-size:1rem; font-weight:900; color:var(--green); margin-bottom:16px;">3,300円（税込）</p>
+          <p style="font-size:0.78rem; font-weight:700; color:var(--text-muted); letter-spacing:0.06em; margin-bottom:8px;">【内容】</p>
+          <p style="font-size:0.93rem; color:var(--text-secondary); line-height:1.9;">
+            約60分のワークショップで、あなたのビジネスの売上をアップさせるための施策づくりを二人三脚で行っていきます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="lp-footer">
+    <div class="container">
+      <p>© 2026 平和動物病院</p>
+      <p style="margin-top:12px; display:flex; gap:24px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://1vetic.com/b-privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>
+        <a href="https://1vetic.com/company/" target="_blank" rel="noopener">会社概要</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // ====== コンボ入力：ドロップダウンで数値を自動入力 ======
+    function fillInput(inputId, selectEl) {
+      if (selectEl.value) {
+        document.getElementById(inputId).value = selectEl.value;
+        selectEl.selectedIndex = 0; // ドロップダウンをリセット
+      }
+    }
+
+    // ====== 業界平均単価データ ======
+    const industryAvg = {
+      general:   8200,
+      surgery:   17500,
+      preventive: 5100,
+      dental:    11500,
+      mixed:     8200
+    };
+
+    const categoryLabel = {
+      general:   '一般診療',
+      surgery:   '外科・手術',
+      preventive: '予防医療',
+      dental:    'デンタルケア',
+      mixed:     '総合'
+    };
+
+    function formatYen(num) {
+      if (num >= 1000000) return (num / 10000).toFixed(0) + '万円';
+      if (num >= 10000) return (num / 10000).toFixed(1) + '万円';
+      return num.toLocaleString() + '円';
+    }
+
+    function calculate() {
+      const visits = parseInt(document.getElementById('monthly-visits').value);
+      const sales = parseInt(document.getElementById('monthly-sales').value);
+      const category = document.getElementById('main-treatment').value;
+
+      // バリデーション
+      if (!visits || !sales || !category) {
+        alert('3つの項目をすべて入力・選択してください。');
+        return;
+      }
+      if (visits <= 0 || sales <= 0) {
+        alert('来院数と売上は0より大きい数値を入力してください。');
+        return;
+      }
+
+      // 計算
+      const currentTanka = Math.round(sales / visits);
+      const avg = industryAvg[category];
+      const diff = currentTanka - avg;
+      const diffAbs = Math.abs(diff);
+
+      // スコア計算（業界平均に対してどの程度最適化されているか）
+      // 単価が低いほど改善余地が大きい（スコアは改善余地スコア）
+      let score;
+      if (diff >= 2000) score = 20;
+      else if (diff >= 500) score = 40;
+      else if (diff >= -500) score = 60;
+      else if (diff >= -2000) score = 80;
+      else score = 95;
+
+      // 大野式メソッド適用の試算
+      // 大野院長の実績: A病院は+705円/頭、B病院は+179円/頭
+      // 保守的に+500円/頭で試算
+      const improvementPerVisit = 500;
+      const annualIncrease = improvementPerVisit * visits * 12;
+
+      // 結果表示
+      document.getElementById('result-tanka').textContent = currentTanka.toLocaleString() + '円';
+
+      const diffEl = document.getElementById('result-diff');
+      const diffLabelEl = document.getElementById('result-diff-label');
+      if (diff >= 0) {
+        diffEl.textContent = '+' + diffAbs.toLocaleString();
+        diffEl.className = 'value positive';
+        diffLabelEl.textContent = `円（業界平均より高い）`;
+      } else {
+        diffEl.textContent = '-' + diffAbs.toLocaleString();
+        diffEl.className = 'value negative';
+        diffLabelEl.textContent = `円（業界平均より低い）`;
+      }
+
+      document.getElementById('result-score').textContent = score;
+
+      const annualEl = document.getElementById('result-annual');
+      annualEl.textContent = '+' + formatYen(annualIncrease);
+      document.getElementById('result-annual-label').textContent =
+        `月${visits}頭の来院数で、単価+500円の最適化を行った場合の年間増収試算`;
+
+      // メッセージ
+      const msgEl = document.getElementById('result-message');
+      if (diff < -1000) {
+        msgEl.textContent = `📌 ${categoryLabel[category]}の業界平均（約${avg.toLocaleString()}円）と比べて、現在の単価は${diffAbs.toLocaleString()}円低い状態です。診療の質を変えずに単価を最適化する余地が大きく残っています。`;
+      } else if (diff < 500) {
+        msgEl.textContent = `📌 業界平均水準に近い単価です。ただし、さらに適切な単価設計を行うことで、来院数を増やさずに収益を伸ばせる可能性があります。`;
+      } else {
+        msgEl.textContent = `📌 業界平均より高い単価水準です。さらなる最適化と、患者満足度を維持しながら単価を高める仕組みを整えることで、安定的な成長が見込めます。`;
+      }
+
+      // 結果セクションを表示してスクロール
+      const resultSection = document.getElementById('result-section');
+      resultSection.style.display = 'block';
+      resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // ====== Scroll Animation ======
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
