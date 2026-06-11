@@ -111,8 +111,9 @@
       animation: fadeInUp 0.8s ease 0.1s backwards;
     }
     .hero-sub {
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-      color: rgba(255,255,255,0.8);
+      font-size: clamp(1.2rem, 3.2vw, 1.8rem);
+      color: rgba(255,255,255,0.95);
+      font-weight: 700;
       margin-bottom: 32px;
       animation: fadeInUp 0.8s ease 0.2s backwards;
     }
@@ -153,7 +154,7 @@
     }
 
     /* ====== EMPATHY ====== */
-    .empathy { background: var(--bg-white); }
+    .empathy { background: var(--bg-section); }
     .empathy h2 {
       font-family: 'Noto Serif JP', serif;
       font-size: clamp(1.3rem, 3.5vw, 1.7rem);
@@ -480,7 +481,7 @@
     .impact-plus { color: var(--green); font-weight: 700; }
 
     /* ====== FORM SECTION ====== */
-    .form-section { background: var(--bg-section); }
+    .form-section { background: var(--bg-white); }
     .form-section h2 {
       font-family: 'Noto Serif JP', serif;
       font-size: clamp(1.2rem, 3.5vw, 1.6rem);
@@ -712,154 +713,27 @@
         「来院数もスタッフも、これ以上増やせない」なら——
       </p>
       <h1>
-        <span class="highlight">体制そのまま</span>で<br>
-        年間<span class="highlight">600万円</span>の<br>
-        売上アップができるかもしれません
+        来院数がたとえ減っても<br>
+        手元に残る利益を増やし<br>
+        経営を安定させる<br>
+        <span class="highlight">診療単価適正化メソッド</span>
       </h1>
       <p class="hero-sub">
-        たった3つの数字を入れるだけ。<br>
-        30秒で分かる「診療単価セルフチェック」を無料でお試しください。
+        ノウハウを凝縮した特別レポートを無料で進呈します。
       </p>
       <div class="hero-proof">
         <div class="proof-chip">
-          <span class="num">+678万円</span><br>A動物病院（個人院）年間売上増加
+          A動物病院（個人院）<br>単価最適化により<span class="num">昨対比123%</span>へ
         </div>
         <div class="proof-chip">
-          <span class="num">+1,535万円</span><br>B動物病院（法人院）年間売上増加
+          B動物病院（法人院）<br>単価最適化により<span class="num">昨対比110%</span>へ
         </div>
       </div>
-      <a href="#calculator" class="hero-cta">今すぐ無料でチェックする（30秒）→</a>
-      <p class="hero-note">※ スタッフ増員・診療時間延長・値上げは一切不要です</p>
-    </div>
-  </section>
-
-  <!-- ====== EMPATHY ====== -->
-  <section class="empathy section">
-    <div class="container">
-      <h2 class="fade-in">こんなことを<br>感じていませんか？</h2>
-      <ul class="pain-list fade-in">
-        <li><span class="pain-icon">▸</span><span>毎日忙しく診ているのに、手元にお金が残らない</span></li>
-        <li><span class="pain-icon">▸</span><span>単価を上げたいが、患者が離れそうで怖い</span></li>
-        <li><span class="pain-icon">▸</span><span>来院数は多いのに、なぜか利益率が低い</span></li>
-        <li><span class="pain-icon">▸</span><span>自分の単価が適正なのか、客観的に判断できない</span></li>
-        <li><span class="pain-icon">▸</span><span>スタッフを増やさずに売上を上げる方法が分からない</span></li>
-      </ul>
-      <p class="empathy-bottom fade-in">その悩み、診療単価の設計で解決できるかもしれません。</p>
-    </div>
-  </section>
-
-  <!-- ====== CALCULATOR ====== -->
-  <section class="calculator-section" id="calculator">
-    <div class="container">
-      <div class="calc-title fade-in">
-        <div class="badge">⚡ 30秒セルフチェック</div>
-        <h2>3つの数字を入力してください</h2>
-      </div>
-
-      <div class="calc-card fade-in">
-        <p style="text-align:center; font-size: 0.9rem; font-weight: 700; text-decoration: underline; color: var(--navy); margin-bottom: 24px; line-height: 1.6;">
-          ※ここに入力した数字はブラウザ上でのみ計算に使用されます。<br>当院や外部に送信・収集されることは一切ありませんのでご安心ください。
-        </p>
-        <div class="calc-input-group">
-          <div class="calc-step">
-            <div class="calc-step-num">1</div>
-            <label for="annual-visits">年間来院数（頭数）</label>
-          </div>
-          <div class="combo-input">
-            <input type="number" id="annual-visits" placeholder="例: 3600" min="1">
-            <select class="combo-select" onchange="fillInput('annual-visits', this)">
-              <option value="" disabled selected>▼ 大まかに選ぶ</option>
-              <option value="960">〜1,200頭</option>
-              <option value="1800">1,200〜2,400頭</option>
-              <option value="3000">2,400〜3,600頭</option>
-              <option value="4800">3,600〜6,000頭</option>
-              <option value="7800">6,000〜10,000頭</option>
-              <option value="12000">10,000頭以上</option>
-            </select>
-          </div>
-          <p class="hint">1年間に何頭の患者さんを診ていますか？</p>
-        </div>
-
-        <div class="calc-input-group">
-          <div class="calc-step">
-            <div class="calc-step-num">2</div>
-            <label for="annual-sales">年間売上（円）</label>
-          </div>
-          <div class="combo-input">
-            <input type="number" id="annual-sales" placeholder="例: 30000000" min="1">
-            <select class="combo-select" onchange="fillInput('annual-sales', this)">
-              <option value="" disabled selected>▼ 大まかに選ぶ</option>
-              <option value="12000000">〜1,200万円</option>
-              <option value="18000000">1,200〜2,400万円</option>
-              <option value="30000000">2,400〜3,600万円</option>
-              <option value="48000000">3,600〜6,000万円</option>
-              <option value="78000000">6,000万円〜1億円</option>
-              <option value="108000000">1億円〜1億4,000万円</option>
-              <option value="144000000">1億4,000万円以上</option>
-            </select>
-          </div>
-          <p class="hint">過去1年間の売上（税込み可）を入力してください</p>
-        </div>
-
-        <div class="calc-input-group">
-          <div class="calc-step">
-            <div class="calc-step-num">3</div>
-            <label for="main-treatment">主な診療内容</label>
-          </div>
-          <select id="main-treatment">
-            <option value="">選択してください</option>
-            <option value="general">一般診療（内科中心）</option>
-            <option value="surgery">外科・手術中心</option>
-            <option value="preventive">予防医療中心（ワクチン・健診）</option>
-            <option value="trimming">トリミング併用</option>
-            <option value="mixed">総合（上記の混合）</option>
-          </select>
-          <p class="hint">最も来院理由として多いものを選んでください</p>
-        </div>
-
-        <button class="calc-btn" onclick="calculate()">
-          診断結果を見る →
-        </button>
-      </div>
-
-      <!-- RESULT -->
-      <div id="result-section">
-        <div class="result-card">
-          <div class="result-header">
-            <h3>📊 あなたの病院の診断結果</h3>
-          </div>
-
-          <div class="result-grid">
-            <div class="result-box">
-              <div class="label">現在の平均<br>診療単価</div>
-              <div class="value" id="result-tanka">—</div>
-              <div class="unit">円 / 頭</div>
-            </div>
-            <div class="result-box">
-              <div class="label">業界平均との<br>比較</div>
-              <div class="value" id="result-diff">—</div>
-              <div class="unit" id="result-diff-label">円</div>
-            </div>
-            <div class="result-box">
-              <div class="label">改善余地<br>スコア</div>
-              <div class="value gold" id="result-score">—</div>
-              <div class="unit">/ 100点</div>
-            </div>
-          </div>
-
-          <div class="result-impact">
-            <div class="label">大野式単価アップメソッド適用の場合の推定効果</div>
-            <div class="big-num" id="result-annual">—</div>
-            <div class="sub" id="result-annual-label">年間売上増加の見込み額（試算）</div>
-          </div>
-
-          <div class="result-message" id="result-message">
-            結果を計算中...
-          </div>
-
-          <p class="result-cta-text">無料で大野式単価アップメソッドのレポートを受け取り、単価アップしませんか？</p>
-        </div>
-      </div>
+      <p class="hero-note" style="margin-top: 10px; font-size: 0.75rem; color: rgba(255, 255, 255, 0.65); margin-bottom: 20px;">
+        ※個人の実例であり、成果を保証するものではありません。
+      </p>
+      <a href="#form" class="hero-cta">今すぐ無料でレポートを受け取る →</a>
+      <p class="hero-note">※ スタッフの増員や、診療時間の延長をせずに単価の設計を見直すアプローチです</p>
     </div>
   </section>
 
@@ -869,10 +743,10 @@
       <p class="fade-in" style="text-align:center; font-size:1.2rem; font-weight:700; color:var(--green); margin-bottom:8px;">大野式単価アップメソッド</p>
       <h2 class="fade-in">実際の成果</h2>
       <p class="fade-in" style="text-align:center; color:var(--text-secondary); margin-bottom:40px; font-size:0.93rem;">
-        スタッフ増員・診療時間延長・値上げなし。<br>単価の設計を変えただけで達成した実績です。
+        スタッフ増員・診療時間延長・新設備導入なし。<br>単価の設計を変えただけで達成した実績です。
       </p>
 
-      <!-- A病院 -->
+      <!-- A動物病院 -->
       <div class="impact-box fade-in">
         <div class="impact-title">実際の改善事例（A動物病院様）</div>
         <table class="impact-table">
@@ -913,7 +787,7 @@
         </table>
       </div>
 
-      <!-- B病院 -->
+      <!-- B動物病院 -->
       <div class="impact-box fade-in">
         <div class="impact-title">実際の改善事例（B動物病院様）</div>
         <table class="impact-table">
@@ -954,6 +828,21 @@
         </table>
       </div>
       <p style="text-align:right; font-size:0.75rem; color:var(--text-muted); margin-top:8px;">※個人の実例であり、成果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <!-- ====== EMPATHY ====== -->
+  <section class="empathy section">
+    <div class="container">
+      <h2 class="fade-in">こんなことを<br>感じていませんか？</h2>
+      <ul class="pain-list fade-in">
+        <li><span class="pain-icon">▸</span><span>毎日忙しく診ているのに、手元にお金が残らない</span></li>
+        <li><span class="pain-icon">▸</span><span>単価を上げたいが、患者が離れそうで怖い</span></li>
+        <li><span class="pain-icon">▸</span><span>来院数は多いのに、なぜか利益率が低い</span></li>
+        <li><span class="pain-icon">▸</span><span>自分の単価が適正なのか、客観的に判断できない</span></li>
+        <li><span class="pain-icon">▸</span><span>スタッフを増やさずに売上を上げる方法が分からない</span></li>
+      </ul>
+      <p class="empathy-bottom fade-in">その悩み、診療単価の設計で解決できるかもしれません。</p>
     </div>
   </section>
 
@@ -1101,7 +990,7 @@
   </section>
 
   <!-- ====== PAID SERVICE NOTICE ====== -->
-  <section class="section" style="background: var(--bg-white);">
+  <section class="section" style="background: var(--bg-section);">
     <div class="container">
       <div style="max-width:600px; margin:0 auto; border:1px solid var(--border); border-radius:16px; padding:36px 32px; box-shadow:0 4px 16px rgba(0,0,0,0.06);">
         <h2 class="fade-in" style="text-align:center; margin-bottom:16px;">有料サービスのお知らせ</h2>
@@ -1134,110 +1023,7 @@
   </footer>
 
   <script>
-    // ====== コンボ入力：ドロップダウンで数値を自動入力 ======
-    function fillInput(inputId, selectEl) {
-      if (selectEl.value) {
-        document.getElementById(inputId).value = selectEl.value;
-        selectEl.selectedIndex = 0; // ドロップダウンをリセット
-      }
-    }
 
-    // ====== 業界平均単価データ ======
-    const industryAvg = {
-      general:   8200,
-      surgery:   17500,
-      preventive: 5100,
-      trimming:  7500,
-      mixed:     8200
-    };
-
-    const categoryLabel = {
-      general:   '一般診療',
-      surgery:   '外科・手術',
-      preventive: '予防医療',
-      trimming:   'トリミング併用',
-      mixed:     '総合'
-    };
-
-    function formatYen(num) {
-      if (num >= 1000000) return (num / 10000).toFixed(0) + '万円';
-      if (num >= 10000) return (num / 10000).toFixed(1) + '万円';
-      return num.toLocaleString() + '円';
-    }
-
-    function calculate() {
-      const visits = parseInt(document.getElementById('annual-visits').value);
-      const sales = parseInt(document.getElementById('annual-sales').value);
-      const category = document.getElementById('main-treatment').value;
-
-      // バリデーション
-      if (!visits || !sales || !category) {
-        alert('3つの項目をすべて入力・選択してください。');
-        return;
-      }
-      if (visits <= 0 || sales <= 0) {
-        alert('来院数と売上は0より大きい数値を入力してください。');
-        return;
-      }
-
-      // 計算
-      const currentTanka = Math.round(sales / visits);
-      const avg = industryAvg[category];
-      const diff = currentTanka - avg;
-      const diffAbs = Math.abs(diff);
-
-      // スコア計算（業界平均に対してどの程度最適化されているか）
-      // 単価が低いほど改善余地が大きい（スコアは改善余地スコア）
-      let score;
-      if (diff >= 2000) score = 20;
-      else if (diff >= 500) score = 40;
-      else if (diff >= -500) score = 60;
-      else if (diff >= -2000) score = 80;
-      else score = 95;
-
-      // 大野式メソッド適用の試算
-      // 大野院長の実績: A病院は+705円/頭、B病院は+179円/頭
-      // 保守的に+500円/頭で試算
-      const improvementPerVisit = 500;
-      const annualIncrease = improvementPerVisit * visits;
-
-      // 結果表示
-      document.getElementById('result-tanka').textContent = currentTanka.toLocaleString() + '円';
-
-      const diffEl = document.getElementById('result-diff');
-      const diffLabelEl = document.getElementById('result-diff-label');
-      if (diff >= 0) {
-        diffEl.textContent = '+' + diffAbs.toLocaleString();
-        diffEl.className = 'value positive';
-        diffLabelEl.textContent = `円（業界平均より高い）`;
-      } else {
-        diffEl.textContent = '-' + diffAbs.toLocaleString();
-        diffEl.className = 'value negative';
-        diffLabelEl.textContent = `円（業界平均より低い）`;
-      }
-
-      document.getElementById('result-score').textContent = score;
-
-      const annualEl = document.getElementById('result-annual');
-      annualEl.textContent = '+' + formatYen(annualIncrease);
-      document.getElementById('result-annual-label').textContent =
-        `年間${visits.toLocaleString()}頭の来院数で、単価+500円の最適化を行った場合の増収試算`;
-
-      // メッセージ
-      const msgEl = document.getElementById('result-message');
-      if (diff < -1000) {
-        msgEl.textContent = `📌 ${categoryLabel[category]}の業界平均（約${avg.toLocaleString()}円）と比べて、現在の単価は${diffAbs.toLocaleString()}円低い状態です。診療の質を変えずに単価を最適化する余地が大きく残っています。`;
-      } else if (diff < 500) {
-        msgEl.textContent = `📌 業界平均水準に近い単価です。ただし、さらに適切な単価設計を行うことで、来院数を増やさずに収益を伸ばせる可能性があります。`;
-      } else {
-        msgEl.textContent = `📌 業界平均より高い単価水準です。さらなる最適化と、患者満足度を維持しながら単価を高める仕組みを整えることで、安定的な成長が見込めます。`;
-      }
-
-      // 結果セクションを表示してスクロール
-      const resultSection = document.getElementById('result-section');
-      resultSection.style.display = 'block';
-      resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
 
     // ====== Scroll Animation ======
     const observer = new IntersectionObserver((entries) => {
